@@ -16,7 +16,7 @@ public class Question6 {
 		float IRate = input3.nextFloat();
 		
 		float count=0;
-		float sum=50;
+		float sum=Contribution;
 		do {
 			count ++;
 			sum = Contribution + sum + (sum * (IRate / 100));
