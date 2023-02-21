@@ -13,22 +13,28 @@ public class Question7 {
 		float IRate = input2.nextFloat();
 		
 		float b = Contribution;
-		boolean entered = true;
-		//enter the year at which balance should be known
-		System.out.print("Enter the year at which balance should be known? ");
-		Scanner input3 = new Scanner(System.in);
-		int Y = input3.nextInt();
-		
-		for(int i=0; i<Y; i++)
+	
+		int count=0;
+		String ans;
+		do
 		{
 			b = b + (Contribution * (IRate / 100));
-		}
-		
-		System.out.println("After year " + Y + ", your balance is " + String.format("%.2f", b));
+			count++;
+		    System.out.println("After year " + count + ", your balance is " + String.format("%.2f", b));
 		
 		    System.out.println("Ready to retire? (Y/N)");
 		    Scanner input4 = new Scanner(System.in);
-		    String ans = input4.nextLine();
+		    ans = input4.nextLine();
 		    
+	    }while(ans.equals("n"));
+		
+		if(ans.equals("y"))
+		{
+			 System.out.println("you are retired! Thank you.");
+		}
+		else
+		{
+			 System.out.println("Program Terminated!");
+		}
 	}
 }
