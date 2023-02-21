@@ -1,22 +1,24 @@
 import java.util.ArrayList;
 import java.util.Collections;
-//import java.util.Random;
+import java.util.Scanner;
 
 public class Question4 {
 	public static void main(String[] args) {
 		
-		/*
-		 * // create instance of Random class Random randomNum = new Random();
-		 * System.out.println("Bet the following combination. It'll make you rich!"); ---------*------got stuck as couldn't sort the number at the end.
-		 * 
-		 * for (int i=1; i<7; i++) { int num = randomNum.nextInt(49);
-		 * System.out.println(num); }
-		 */
 		
 		//Create arraylist
 		ArrayList num = new ArrayList();
-		//given range is 1-49
-		for(int i=0; i<49; i++)
+		
+		//give range
+		System.out.print("Enter the min number of the range.");
+		Scanner input1 = new Scanner(System.in);
+		int min = input1.nextInt();
+		
+		System.out.print("Enter the max number of the range.");
+		Scanner input2 = new Scanner(System.in);
+		int max = input2.nextInt();
+		
+		for(int i=min; i<max; i++)
 		{
 		   num.add(i+1);	
 		}
