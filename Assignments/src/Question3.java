@@ -8,11 +8,10 @@ public class Question3 {
 		String name = input1.nextLine();
 		
 		System.out.print("How old are you? ");
-		Scanner input2 = new Scanner(System.in);
-		int age = input2.nextInt();
+		int age = input1.nextInt();
 		
 		age ++;
 		System.out.print("Hello " + name +". Next year, you'll be " + age );
-	
+	    input1.close();
 }
 }
