@@ -4,37 +4,33 @@ public class Question7 {
 
 	public static void main(String[] args) {
 		
-		System.out.print("How much money will you contribute every year? ");
+		//money contributed every year
+		System.out.print("How much money will you contribution every year? ");
 		Scanner input1 = new Scanner(System.in);
-		float Contribution = input1.nextFloat();
-		
+		float contribution = input1.nextFloat();
+		//interest rate at which money is calculated
 		System.out.print("Interest rate in %: ");
-		Scanner input2 = new Scanner(System.in);
-		float IRate = input2.nextFloat();
-		
-		float b = Contribution;
-	
+		float iRate = input1.nextFloat();
+		//declare variables
+		float sum = contribution;
 		int count=0;
 		String ans;
-		do
-		{
-			b = b + (Contribution * (IRate / 100));
-			count++;
-		    System.out.println("After year " + count + ", your balance is " + String.format("%.2f", b));
+		Scanner input2 = new Scanner(System.in);
+		//loop to handle Y/N
+			do
+			{
+				sum = sum + (contribution * (iRate / 100));
+				count++;
+			    System.out.println("After year " + count + ", your balance is " + String.format("%.2f", sum));
+			
+			    System.out.println("Ready to retire? (Y/N)");
+			    
+			    ans = input2.nextLine();
+			    
+		    }while(ans.equals("n"));
 		
-		    System.out.println("Ready to retire? (Y/N)");
-		    Scanner input4 = new Scanner(System.in);
-		    ans = input4.nextLine();
-		    
-	    }while(ans.equals("n"));
-		
-		if(ans.equals("y"))
-		{
-			 System.out.println("you are retired! Thank you.");
-		}
-		else
-		{
-			 System.out.println("Program Terminated!");
-		}
+	    input1.close();
+	    input2.close();
 	}
+	
 }
