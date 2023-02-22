@@ -11,22 +11,16 @@ class EmployeeMain{
      emp[2] = new Employee("Tony Tester",42000.0,"1990-03-15");
  
      //display the employee object data
-     emp[0].getEmployeeData();
-     emp[1].getEmployeeData();
-     emp[2].getEmployeeData();
      
-     //Raise salary
-     System.out.println("Salary incremented by 5%");
-     emp[0].RaiseSalary();
-     emp[1].RaiseSalary();
-     emp[2].RaiseSalary();
-     
-     //display the employee object data
-     emp[0].getEmployeeData();
-     emp[1].getEmployeeData();
-     emp[2].getEmployeeData();
-     
-     
+	     for ( Employee empDetails: emp) 
+	 		 empDetails.getEmployeeData();
+	   	//Raise salary by 5%
+	     System.out.println("Salary incremented by 5%");
+	        for ( Employee empDetails: emp)
+	        {
+	        	empDetails.RaiseSalary();
+	        	empDetails.getEmployeeData();
+	    	}
   }
    
    
