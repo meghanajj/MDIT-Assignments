@@ -2,5 +2,5 @@ package Week2;
 
 public class Employee {
 	//declare the variable
-	static double salary;
+	 static double salary = 50000;
 }
