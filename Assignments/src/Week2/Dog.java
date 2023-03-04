@@ -3,7 +3,7 @@ package Week2;
 public class Dog extends Animal {
 	
 	//declaring the method Bark with a print statement
-	public void bark() {
+	public static void bark() {
 		System.out.println("Dog is Barking");
 	}
 }
