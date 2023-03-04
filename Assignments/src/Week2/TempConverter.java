@@ -7,7 +7,7 @@ public class TempConverter {
 	public static void main(String[] args) {
 
 				Scanner input = new Scanner(System.in);
-				int option = 0;
+				int choice = 0;
 				double celcius;
 				double fahrenheit;
 				double kelvin;
@@ -23,9 +23,9 @@ public class TempConverter {
 				do {
 
 					System.out.print("Enter Choice: ");
-					option = input.nextInt();
+					choice = input.nextInt();
 
-					switch (option) {
+					switch (choice) {
 
 						// Celcius to Fahrenheit
 						case 1: {
@@ -98,7 +98,7 @@ public class TempConverter {
 						}
 
 					}
-				}while (option < 7);
+				}while (choice < 7);
 	}
 }
 				
