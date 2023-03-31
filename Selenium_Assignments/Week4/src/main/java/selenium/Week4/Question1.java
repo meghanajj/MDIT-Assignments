@@ -1,5 +1,7 @@
 package selenium.Week4;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +12,7 @@ public class Question1 {
 
 	    public static void main(String[] args) throws InterruptedException {
 	    	
+		
 	    	ChromeOptions co = new ChromeOptions();
 			co.addArguments("--remote-allow-origins=*");
 			
@@ -32,6 +35,7 @@ public class Question1 {
 	        date.click();
 
 	        driver.quit();
+			
 	    }
 
 	
