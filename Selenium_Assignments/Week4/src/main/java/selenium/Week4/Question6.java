@@ -13,33 +13,37 @@ public class Question6 {
 	
 	public static void main(String[] args) {
 		
+		//use chrome options to resolve web socket issue
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--remote-allow-origins=*");
 		
-		//create an instance of web driver interface
-	    WebDriver driver;
-	    //creating obj of chrome driver class
-	    driver = new ChromeDriver(co);
-	    driver.manage().window().maximize();
+		// create an instance of web driver interface
+		WebDriver driver;
+		// creating obj of chrome driver class
+		driver = new ChromeDriver(co);
+		//maximise the window
+		driver.manage().window().maximize();
+		//get the url 
 	    driver.get("https://www.ironspider.ca/forms/checkradio.htm");
 	    
+	   //get the path of checkbox and save them as list of webelements
 	    List<WebElement> CheckboxList = driver.findElements(By.xpath("//form[contains(text(),'My favourite colors are:')]"));
 	    
+	    //using for loop print each text of the checkbox
 	    for(WebElement checkbox : CheckboxList) {
 	        System.out.println(checkbox.getText());
 	    }
 	    
-	    WebElement RadButton = driver.findElement(By.xpath("//form[contains(text(),'Your current web browser is:')]"));
-		
-		   // Scrolling down the page till the element is found		
-		    JavascriptExecutor js = (JavascriptExecutor) driver;
-	        js.executeScript("arguments[0].scrollIntoView();", RadButton);
-	    
+	    //get the path of radiobutton and save them as list of webelements
 	    List<WebElement> RadioButtonList = driver.findElements(By.xpath("//form[contains(text(),'Your current web browser is:')]"));
-	     
+ 
+        //using for loop print each text of the radio button
 	    for(WebElement RadioButton : RadioButtonList) {
 	        System.out.println(RadioButton.getText());
 	    }
+
+	    //close the driver at the end 
+	  	driver.close();
 		
 	}
 

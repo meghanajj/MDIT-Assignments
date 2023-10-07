@@ -16,7 +16,8 @@ import org.openqa.selenium.support.ui.Select;
 public class Question2 {
 
 	public static void main(String[] args) {
-
+		
+		//use chrome options to resolve web socket issue
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--remote-allow-origins=*");
 
