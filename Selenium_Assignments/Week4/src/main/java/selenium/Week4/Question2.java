@@ -1,6 +1,7 @@
 package selenium.Week4;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,7 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Question2 {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--remote-allow-origins=*");
@@ -23,66 +24,56 @@ public class Question2 {
 		WebDriver driver;
 		// creating obj of chrome driver class
 		driver = new ChromeDriver(co);
+		//maximise the window
 		driver.manage().window().maximize();
+		//get the url 
 		driver.get(" https://jqueryui.com/selectmenu/");
+		
+		//give a implicit wait for every operation
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
-//		// call scrolldown utility
-		
-//		SeleniumUtils.scrollDown(driver);
-		
-		//search for frame and switch to frame WebElement Frame =
+		//search for frame and switch to frame 
 		WebElement Frame = driver.findElement(By.className("demo-frame"));
 		driver.switchTo().frame(Frame);
 		
-		WebElement speed = driver.findElement(By.xpath("//span[@id='speed-button']")); 
-		speed.click();
-		//instantiate action
-		Actions actions = new Actions(driver);
-		actions.click(speed);
-		actions.sendKeys(Keys.ARROW_DOWN).build().perform();
-		Thread.sleep(2000);
+		try {
+				
+				//get the webelement to be clicked using their xpath
+				WebElement speed = driver.findElement(By.xpath("//span[@id='speed-button']")); 
+				speed.click();
+				//instantiate action
+				Actions actions = new Actions(driver);
+				actions.click(speed);
+				//using sendkeys arrow down or up to be used and using the method build and perform, the click on the keys is done
+				actions.sendKeys(Keys.ARROW_DOWN).build().perform();
+				
+				//title , create action and using send keys perform the click
+				WebElement title = driver.findElement(By.id("salutation-button")); 
+				title.click();
+				actions.click(title);
+				actions.sendKeys(Keys.ARROW_DOWN).build().perform();
+				
+				//number, create action and using send keys perform the click
+				WebElement number = driver.findElement(By.id("number-button")); 
+				number.click();
+				actions.click(number);
+				actions.sendKeys(Keys.ARROW_DOWN).build().perform();
+				
+				//Files, create action and using send keys perform the click
+				WebElement file = driver.findElement(By.id("files-button")); 
+				file.click();
+				actions.click(file);
+				actions.sendKeys(Keys.ARROW_DOWN).build().perform();
+				
+		}
 		
-		//title
-		WebElement title = driver.findElement(By.id("salutation-button")); 
-		title.click();
-		actions.click(title);
-		actions.sendKeys(Keys.ARROW_DOWN).build().perform();
-		Thread.sleep(2000);
+		catch (NoSuchElementException e) {
+			
+			System.out.println(e);
+		}
 		
-		//number
-		WebElement number = driver.findElement(By.id("number-button")); 
-		number.click();
-		actions.click(number);
-		actions.sendKeys(Keys.ARROW_DOWN).build().perform();
-		Thread.sleep(2000);
-		
-		//Files
-		WebElement file = driver.findElement(By.id("files-button")); 
-		file.click();
-		actions.click(file);
-		actions.sendKeys(Keys.ARROW_DOWN).build().perform();
-		Thread.sleep(2000);
-		
-		//span[@id='speed-button']
-		/*
-		 * //search for frame and switch to frame WebElement Frame =
-		 * driver.findElement(By.className("demo-frame"));
-		 * driver.switchTo().frame(Frame);
-		 * 
-		 * WebElement speed = driver.findElement(By.id("speed-button")); speed.click();
-		 * 
-		 * Select speedOption = new Select(speed); speedOption.selectByIndex(2);
-		 * 
-		 * 
-		 * WebElement speedOption =
-		 * driver.findElement(By.xpath("//div[@id='ui-id-5']")); speedOption.click();
-		 * 
-		 * WebElement salutation = driver.findElement(By.id("salutation-button"));
-		 * salutation.click();
-		 * 
-		 * Select salOption = new Select(salutation); // salOption.deselectAll();
-		 * salOption.selectByVisibleText("Dr.");
-		 */
+		//close the driver at the end 
+		driver.close();
 		
 		
 	}
