@@ -1,0 +1,72 @@
+{
+  "id": "12abd4b5-74a2-4a5a-9420-9b96f2ed8683",
+  "version": "2.0",
+  "name": "w4-program 8",
+  "url": "https://www.google.co.in/",
+  "tests": [{
+    "id": "c7adba1e-cb89-4e15-bae3-f2f2aef1435c",
+    "name": "week4 q8",
+    "commands": [{
+      "id": "9a481094-8207-4a61-a305-54e60d105b38",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.google.co.in/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "77740a75-10cb-487f-930c-2df7e1f595fb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65d74f12-86f8-4a1d-b249-74bb3c91facb",
+      "comment": "",
+      "command": "type",
+      "target": "id=APjFqb",
+      "targets": [
+        ["id=APjFqb", "id"],
+        ["name=q", "name"],
+        ["css=#APjFqb", "css:finder"],
+        ["xpath=//textarea[@id='APjFqb']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "automation testing seelenium"
+    }, {
+      "id": "1159db2b-a591-4b3b-873c-b4028bffd14e",
+      "comment": "",
+      "command": "click",
+      "target": "css=#jZ2SBf b",
+      "targets": [
+        ["css=#jZ2SBf b", "css:finder"],
+        ["xpath=//div[@id='jZ2SBf']/div/span/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,' selenium')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb33ce74-94af-4126-919e-1e5806f77c9f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.g:nth-child(12) .LC20lb",
+      "targets": [
+        ["css=.g:nth-child(12) .LC20lb", "css:finder"],
+        ["xpath=//div[@id='rso']/div[2]/div[3]/div/div/div/div/div/div/span/a/h3", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div/div/div/span/a/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Overview of Test Automation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4d9551e7-e52e-4fdc-97da-1d48bd8bbb76",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.google.co.in/"],
+  "plugins": []
+}
